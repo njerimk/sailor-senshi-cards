@@ -13,7 +13,8 @@ app.get("/api", (req, res) => {
 
 //All other GET requests not handled by api route the server will respond with the React app
 app.get('*', (req,res) => {
-    res.sendFile(path.resolve(__dirname, '../client/build', 'index/html'));
+    const index = path.join(__dirname, 'build', 'index.html')
+    res.sendFile(index);
 })
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
