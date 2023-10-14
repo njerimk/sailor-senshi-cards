@@ -13,7 +13,7 @@ app.get("/api", (req, res) => {
 
 //All other GET requests not handled by api route the server will respond with the React app
 app.get('*', (req,res) => {
-    const index = path.join(__dirname, 'build', 'index.html')
+    const index = path.join(__dirname, 'build', 'index.js')
     res.sendFile(index);
 })
 app.listen(PORT, () => {
